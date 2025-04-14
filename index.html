@@ -75,7 +75,7 @@
 <body>
   <div class="login-card">
     <h2><i class="fas fa-sign-in-alt"></i> Smart Campus Login</h2>
-    <form id="loginForm" method="post">
+    <form id="loginForm">
       <div class="form-group">
         <label for="email">Student Email</label>
         <input type="email" id="email" name="email" placeholder="example@campus.edu" required />
@@ -92,43 +92,24 @@
   </div>
 
   <script>
-    document.querySelector('#loginForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevents URL change and form reload
+    // Wait for the DOM to load first
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginForm = document.getElementById("loginForm");
 
-      const email = document.querySelector('#email').value;
-      const password = document.querySelector('#password').value;
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop it from submitting the old-school way
 
-      // Just for demo — replace with real logic if needed
-      alert(`You entered:\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}`);
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-      // Example: redirect after "login"
-      // window.location.href = "dashboard.html";
-    });
-
-  <form id="loginForm" method="post">
-    <div class="form-group">
-      <label for="email">Student Email</label>
-      <input type="email" id="email" name="email" placeholder="example@campus.edu" required />
-    </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="Enter your password" required />
-    </div>
-    <button type="submit">Login</button>
-  </form>
-
-  <script>
-    document.querySelector('#loginForm').addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevents data from going into the URL
-
-      const email = document.querySelector('#email').value;
-      const password = document.querySelector('#password').value;
-
-      // Just for demo (remove in production!)
-      alert(`Email: ${email}\nPassword: ${'*'.repeat(password.length)}`);
+        // For now, just pretend login is always successful
+        if (email && password) {
+          window.location.href = "dashboard.html"; // Make sure this file exists!
+        } else {
+          alert("Please fill in both fields.");
+        }
+      });
     });
   </script>
 </body>
 </html>
-
- 
