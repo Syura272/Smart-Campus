@@ -1,0 +1,146 @@
+<!-- 3. Chat -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat | Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .header {
+      background-color: #4c1d95;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sidebar {
+      background-color: #e0e7ff;
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding: 20px 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+    .sidebar a {
+      display: block;
+      color: #4c1d95;
+      font-weight: 500;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .sidebar a:hover {
+      background-color: #c7d2fe;
+    }
+    .sidebar .active {
+      background-color: #38bdf8;
+      color: white;
+    }
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+    .dashboard-card {
+      background: #ffffff;
+      border-left: 6px solid #7e22ce;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+    }
+    .dashboard-card h2 {
+      color: #7e22ce;
+      margin-bottom: 15px;
+    }
+    .chat-box {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #f9fafb;
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 15px;
+    }
+    .chat-message {
+      margin-bottom: 10px;
+    }
+    .chat-message span {
+      font-weight: bold;
+      color: #4c1d95;
+    }
+    .chat-input {
+      display: flex;
+      gap: 10px;
+    }
+    .chat-input input {
+      flex-grow: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .chat-input button {
+      background-color: #4c1d95;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .chat-input button:hover {
+      background-color: #6d28d9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Smart Campus</h1>
+    <div>
+      <i class="fas fa-bell"></i>
+      <span style="margin-right: 15px">Stud Name</span>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+    <a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a>
+    <a href="#" class="active"><i class="fas fa-comments"></i> Chat</a>
+    <a href="#"><i class="fas fa-user"></i> Profile</a>
+    <a href="#"><i class="fas fa-edit"></i> Registration</a>
+    <a href="#"><i class="fas fa-clock"></i> Schedule</a>
+    <a href="#"><i class="fas fa-life-ring"></i> Support</a>
+    <a href="#"><i class="fas fa-book"></i> Booking</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+  </div>
+
+  <div class="main">
+    <div class="dashboard-card">
+      <h2><i class="fas fa-comments"></i> Chat</h2>
+      <div class="chat-box">
+        <div class="chat-message"><span>John:</span> Hey, are you coming to the study group today?</div>
+        <div class="chat-message"><span>You:</span> Yeah, I’ll be there at 4 PM!</div>
+        <div class="chat-message"><span>Aisha:</span> Don’t forget to bring the project files!</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message..."/>
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 4. Profile --> <!-- Coming Next -->

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-card {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    .login-card h2 {
+      text-align: center;
+      color: #4c1d95;
+      margin-bottom: 25px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #4c1d95;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      background-color: #4c1d95;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #6d28d9;
+    }
+    .login-footer {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .login-footer a {
+      color: #4c1d95;
+      text-decoration: none;
+    }
+    .login-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <h2><i class="fas fa-sign-in-alt"></i> Smart Campus Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Student Email</label>
+        <input type="email" id="email" name="email" placeholder="example@campus.edu" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="login-footer">
+      Don't have an account? <a href="#">Register here</a>
+    </div>
+  </div>
+
+  <script>
+    // Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "your-api-key",
+      authDomain: "your-project-id.firebaseapp.com",
+      projectId: "your-project-id",
+      storageBucket: "your-project-id.appspot.com",
+      messagingSenderId: "your-sender-id",
+      appId: "your-app-id",
+    };
+    
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.getAuth(app);
+    
+    // Select the login form and inputs
+    const loginForm = document.querySelector('#loginForm');
+    const emailInput = document.querySelector('#email');
+    const passwordInput = document.querySelector('#password');
+    
+    // Handle form submission
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault(); // Prevent form default behavior
+      
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      
+      // Firebase authentication
+      firebase
+        .signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // After successful login, redirect to dashboard or profile page
+          window.location.href = "dashboard.html"; // Change to your private page URL
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert("Error: " + errorMessage); // Display error message
+        });
+    });
+  </script>
+</body>
+</html>

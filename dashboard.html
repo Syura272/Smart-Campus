@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<script>
+  // Check if the user is logged in before accessing this page
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+      // If not logged in, redirect to login page
+      window.location.href = "index.html";
+    }
+  });
+</script>
+
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <title>Smart Campus Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="logo">Smart Campus</div>
+    <div class="user-info">
+      <span>🔔</span>
+      <span>Stud Name</span>
+      <img src="profile.jpg" alt="Profile" class="profile-pic">
+    </div>
+  </div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <ul>
+        <li class="active"><i class="fas fa-chart-pie"></i> Dashboard</li>
+        <li><i class="fas fa-house"></i> Home</li>
+        <li><i class="fas fa-folder-open"></i> Files</li>
+        <li><i class="fas fa-book"></i> My Courses</li>
+        <li><i class="fas fa-bullhorn"></i> Notices</li>
+        <li><i class="fas fa-calendar-alt"></i> Calendar</li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <section class="course-section">
+        <div class="course-header">
+          <h2>My Courses</h2>
+          <div class="filters">
+            <select><option>All Courses</option></select>
+            <select><option>Course Name</option></select>
+            <select><option>Card View</option></select>
+          </div>
+        </div>
+
+        <div class="course-cards">
+          <div class="card">
+            <div class="card-thumb blue"></div>
+            <h4>Applied Programming</h4>
+            <p>Session Jan - Jun</p>
+          </div>
+          <div class="card">
+            <div class="card-thumb purple"></div>
+            <h4>Student Affairs</h4>
+            <p>SCMS Brunei</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="rightbar">
+      <div class="widget">
+        <h3><i class="fas fa-thumbtack"></i> Latest 2025</h3>
+        <p>Updated Student Guide Available</p>
+      </div>
+      <div class="widget">
+        <h3><i class="fas fa-folder"></i> Private Files</h3>
+        <p>No files uploaded yet.</p>
+        <a href="#">Manage files</a>
+      </div>
+      <div class="widget">
+        <h3><i class="fas fa-medal"></i> Badges</h3>
+        <p>You don't have any badges yet.</p>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

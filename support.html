@@ -1,0 +1,146 @@
+<!-- 7. Support -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support | Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .header {
+      background-color: #4c1d95;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sidebar {
+      background-color: #e0e7ff;
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding: 20px 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+    .sidebar a {
+      display: block;
+      color: #4c1d95;
+      font-weight: 500;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .sidebar a:hover {
+      background-color: #c7d2fe;
+    }
+    .sidebar .active {
+      background-color: #38bdf8;
+      color: white;
+    }
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+    .dashboard-card {
+      background: #ffffff;
+      border-left: 6px solid #7e22ce;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+    }
+    .dashboard-card h2 {
+      color: #7e22ce;
+      margin-bottom: 15px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      font-weight: 600;
+      color: #4c1d95;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-size: 14px;
+    }
+    textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    button {
+      background-color: #4c1d95;
+      color: white;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #6d28d9;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Smart Campus</h1>
+    <div>
+      <i class="fas fa-bell"></i>
+      <span style="margin-right: 15px">Stud Name</span>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+    <a href="#"><i class="fas fa-calendar-alt"></i> Calendar</a>
+    <a href="#"><i class="fas fa-comments"></i> Chat</a>
+    <a href="#"><i class="fas fa-user"></i> Profile</a>
+    <a href="#"><i class="fas fa-edit"></i> Registration</a>
+    <a href="#"><i class="fas fa-clock"></i> Schedule</a>
+    <a href="#" class="active"><i class="fas fa-life-ring"></i> Support</a>
+    <a href="#"><i class="fas fa-book"></i> Booking</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+  </div>
+
+  <div class="main">
+    <div class="dashboard-card">
+      <h2><i class="fas fa-life-ring"></i> Support Request</h2>
+      <form>
+        <div class="form-group">
+          <label for="category">Issue Category</label>
+          <input type="text" id="category" name="category" placeholder="e.g. Registration Issue, Schedule Conflict" />
+        </div>
+        <div class="form-group">
+          <label for="description">Describe Your Issue</label>
+          <textarea id="description" name="description" placeholder="Please explain the issue you’re facing..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="contact">Preferred Contact Email</label>
+          <input type="email" id="contact" name="contact" placeholder="your.email@domain.com" />
+        </div>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 8. Booking --> <!-- Coming Next -->

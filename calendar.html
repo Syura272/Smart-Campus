@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar | Smart Campus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .header {
+      background-color: #4c1d95;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .sidebar {
+      background-color: #e0e7ff;
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      padding: 20px 10px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+    .sidebar a {
+      display: block;
+      color: #4c1d95;
+      font-weight: 500;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .sidebar a:hover {
+      background-color: #c7d2fe;
+    }
+    .sidebar .active {
+      background-color: #38bdf8;
+      color: white;
+    }
+    .main {
+      margin-left: 240px;
+      padding: 30px;
+    }
+    .dashboard-card {
+      background: #ffffff;
+      border-left: 6px solid #7e22ce;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 800px;
+    }
+    .dashboard-card h2 {
+      color: #7e22ce;
+      margin-bottom: 15px;
+    }
+    .dashboard-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .dashboard-card li {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+    .dashboard-card li::before {
+      content: "• ";
+      color: #7e22ce;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Smart Campus</h1>
+    <div>
+      <i class="fas fa-bell"></i>
+      <span style="margin-right: 15px">Stud Name</span>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+    <a href="#" class="active"><i class="fas fa-calendar-alt"></i> Calendar</a>
+    <a href="#"><i class="fas fa-comments"></i> Chat</a>
+    <a href="#"><i class="fas fa-user"></i> Profile</a>
+    <a href="#"><i class="fas fa-edit"></i> Registration</a>
+    <a href="#"><i class="fas fa-clock"></i> Schedule</a>
+    <a href="#"><i class="fas fa-life-ring"></i> Support</a>
+    <a href="#"><i class="fas fa-book"></i> Booking</a>
+    <a href="#"><i class="fas fa-chart-line"></i> Analytics</a>
+    <a href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+  </div>
+
+  <div class="main">
+    <div class="dashboard-card">
+      <h2><i class="fas fa-calendar-alt"></i> Calendar</h2>
+      <ul>
+        <li>Apr 15: ITP2231 AS01 Assignment Submission</li>
+        <li>Apr 20: Mid-Term Exam</li>
+        <li>May 1: Semester Break</li>
+        <li>May 10: </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
