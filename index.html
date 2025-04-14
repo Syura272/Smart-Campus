@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login | Smart Campus</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js"></script>
   <style>
     body {
       margin: 0;
@@ -77,7 +75,7 @@
 <body>
   <div class="login-card">
     <h2><i class="fas fa-sign-in-alt"></i> Smart Campus Login</h2>
-    <form id="loginForm">
+    <form id="loginForm" method="post">
       <div class="form-group">
         <label for="email">Student Email</label>
         <input type="email" id="email" name="email" placeholder="example@campus.edu" required />
@@ -94,44 +92,17 @@
   </div>
 
   <script>
-    // Firebase Configuration
-    const firebaseConfig = {
-      apiKey: "your-api-key",
-      authDomain: "your-project-id.firebaseapp.com",
-      projectId: "your-project-id",
-      storageBucket: "your-project-id.appspot.com",
-      messagingSenderId: "your-sender-id",
-      appId: "your-app-id",
-    };
-    
-    // Initialize Firebase
-    const app = firebase.initializeApp(firebaseConfig);
-    const auth = firebase.getAuth(app);
-    
-    // Select the login form and inputs
-    const loginForm = document.querySelector('#loginForm');
-    const emailInput = document.querySelector('#email');
-    const passwordInput = document.querySelector('#password');
-    
-    // Handle form submission
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Prevent form default behavior
-      
-      const email = emailInput.value;
-      const password = passwordInput.value;
-      
-      // Firebase authentication
-      firebase
-        .signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // After successful login, redirect to dashboard or profile page
-          window.location.href = "dashboard.html"; // Change to your private page URL
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert("Error: " + errorMessage); // Display error message
-        });
+    document.querySelector('#loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevents URL change and form reload
+
+      const email = document.querySelector('#email').value;
+      const password = document.querySelector('#password').value;
+
+      // Just for demo — replace with real logic if needed
+      alert(`You entered:\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}`);
+
+      // Example: redirect after "login"
+      // window.location.href = "dashboard.html";
     });
   </script>
 </body>
