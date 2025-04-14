@@ -104,6 +104,31 @@
       // Example: redirect after "login"
       // window.location.href = "dashboard.html";
     });
+
+  <form id="loginForm" method="post">
+    <div class="form-group">
+      <label for="email">Student Email</label>
+      <input type="email" id="email" name="email" placeholder="example@campus.edu" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+    </div>
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.querySelector('#loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevents data from going into the URL
+
+      const email = document.querySelector('#email').value;
+      const password = document.querySelector('#password').value;
+
+      // Just for demo (remove in production!)
+      alert(`Email: ${email}\nPassword: ${'*'.repeat(password.length)}`);
+    });
   </script>
 </body>
 </html>
+
+ 
